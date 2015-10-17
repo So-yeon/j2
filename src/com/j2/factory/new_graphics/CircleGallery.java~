@@ -1,0 +1,18 @@
+package com.j2.factory.new_graphics;
+
+public class CircleGallery extends GraphicsGallery {
+    protected Graphics createGraphic(String item) {
+        Graphics graphics = null;
+        GraphicsEffectFactory effectFactory=new CircleEffectFactory();
+        if (item.equals("circle")) {
+            graphics = new Circle(effectFactory);
+            graphics.setName("Strong 3D Red Style Circle");
+          }
+        return graphics;
+    }
+}
+Graphics grapics = showGraphics(type);
+    System.out.println("***** Showing a " + Graphics.getName() + " *****");
+    graphics.printName();
+    graphics.whatEffect();
+    graphics.isStereo();

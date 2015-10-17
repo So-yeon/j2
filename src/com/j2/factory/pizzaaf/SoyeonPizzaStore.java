@@ -1,0 +1,14 @@
+package com.j2.factory.pizzaaf;
+
+public class SoyeonPizzaStore extends PizzaStore {
+    protected Pizza createPizza(String item) {
+        Pizza pizza = null;
+        PizzaIngredientFactory ingredientFactory=new SoyeonPizzaIngredientFactory();
+        if (item.equals("potato")) {
+            pizza = new SoyeonPizza(ingredientFactory);
+            pizza.setName("Soyeon Style Potato Pizza");
+        }
+        return pizza;
+    }
+}
+
