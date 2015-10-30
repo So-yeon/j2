@@ -1,0 +1,18 @@
+package com.j2.singleton.printspooler;
+//dcl·Î ±¸Çö (double checking locking) - volatile
+public class PrintSpooler {
+  private volatile static PrintSpooler uniqueInstance;
+  
+  private PrintSpooler() {}
+  
+  public static PrintSpooler getInstance () {
+    if (uniqueInstance == null) {
+      synchronized (PrintSpooler.class) {
+        if (uniqueInstance == null) {
+          uniqueInstance = new PrintSpooler();
+        }
+      }
+    }
+    return uniqueInstance;
+  }
+}
