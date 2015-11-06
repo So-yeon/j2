@@ -1,0 +1,5 @@
+11-4 과제 총 3개
+
+1. dvdundo : DVD플레이어를 undo사용해 구현
+2. macroparty : macro를 이용해 home의 여러 가전제품을 관리하는 프로그램 구현
+3. commandnewcase : Command패턴의 new case과제 (Soyeon Computer) - 구현하면 가점있음!
