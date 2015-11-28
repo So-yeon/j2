@@ -1,0 +1,29 @@
+package com.j2.iterator.dinermerger.before;
+
+public class DinerMenu {
+  static final int MAX_ITEMS = 3; //메뉴의 갯수를 정해놓음
+  int numberOfItems = 0;
+  MenuItem[] menuItems;
+  
+  public DinerMenu() { //Menu출력할 때 3개를 모두 출력하느
+    menuItems = new MenuItem[MAX_ITEMS]; //전부 True로 만들어서 하는 게 과제임.
+    addItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
+    addItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99);
+    addItem("Soup of the day", "Soup of the day, with a side of potato salad", false, 3.29);
+  }
+  
+  public void addItem(String n, String d, boolean v, double p) {
+    MenuItem menuItem = new MenuItem(n,d,v,p);
+    if(numberOfItems >= MAX_ITEMS) {
+      System.out.println("Sorry full.");
+    }
+    else {
+      menuItems[numberOfItems] = menuItem;
+      numberOfItems += 1;
+    }
+  }
+  
+  public MenuItem[] getMenuItems() { //array를 뒤질 때 아까와는 다른  인터페이스 사용.
+    return menuItems;
+  }
+}
